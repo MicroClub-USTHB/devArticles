@@ -6,4 +6,4 @@ This folder contains articles on Artificial Intelligence, focusing on research, 
 #### 1. AI Beyond LLMs: A Research-to-Product Guide for Modern Intelligent Systems
 
 *Authored by Younes BENSAFIA and BELLIL Nawel*
-- [AI Beyond LLMs: A Research-to-Product Guide](ai-beyond-llms-research-to-product.md) 
+- [AI Beyond LLMs: A Research-to-Product Guide](ai-beyond-llms-research-to-product/ai-beyond-llms-research-to-product.md) 
