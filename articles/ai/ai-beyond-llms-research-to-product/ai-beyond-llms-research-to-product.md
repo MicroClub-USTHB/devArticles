@@ -3,7 +3,7 @@
 ## Project Title
 **AI Beyond LLMs: A Research-to-Product Guide for Modern Intelligent Systems**
 
-## Project Description
+## Article Description
 This article aims to become a **flagship technical asset** for the club: a guide that unifies:
 
 - Research foundations  
