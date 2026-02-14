@@ -8,5 +8,30 @@ Classical ML models  such as decision trees, support vector machines (SVMs), ran
 ### Use Cases  
 Classical ML is widely used in domains where interpretability, reliability, and computational efficiency are paramount, such as fraud detection systems, production quality monitoring, predictive maintenance in manufacturing, risk assessment, and structured business metrics forecasting. These models also power many traditional analytics pipelines and remain industry staples for tabular problems where simpler models outperform larger architectures. 
 
-### Limitations  
+### Limitations
 Despite their strengths, classical ML models struggle with high-dimensional unstructured data such as raw text or images, where they typically require extensive feature extraction and preprocessing. They also generally underperform compared with deep learning architectures on problems involving complex patterns or large-scale representation learning. 
+
+---
+
+### Strategic Positioning
+
+Classical ML should be considered the default baseline for structured, tabular problems.
+
+Deep learning is not an automatic upgrade — it is a compute trade-off.
+
+If:
+- Feature space is well-defined
+- Interpretability is required (finance, risk, compliance)
+- Dataset size is limited
+- Deployment must run on CPU-only infrastructure
+
+Then classical ML often provides superior cost-performance alignment.
+
+In many Kaggle-style tabular competitions and production systems, gradient boosting models (XGBoost, LightGBM, CatBoost) outperform deep neural networks on structured data.
+
+Architecturally, classical ML minimizes:
+- Training cost
+- Inference latency
+- Operational complexity
+
+It should be the first validated baseline before any deep model is introduced.
