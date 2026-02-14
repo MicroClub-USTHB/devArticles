@@ -1,167 +1,248 @@
-## Diffusion Models
+# Diffusion & Multimodal Systems  
 
-Diffusion models are likelihood-based generative systems that learn to reverse a progressive noise process.  
-Instead of directly generating data, they learn how structured signals degrade into noise and how to invert that degradation.
 
-### Core Mechanism
+# Part I — Diffusion Models
 
-The training process consists of two conceptual stages:
+## 1. Conceptual Foundation
 
-1. A fixed forward noising schedule progressively corrupts training samples.
-2. A neural network learns to predict the noise component at arbitrary corruption levels.
+Diffusion models are **likelihood-based generative systems** that learn to reverse a progressive noising process.
 
-The model does not predict the clean sample directly.  
-It predicts the noise residual.  
+They operate through a two-stage mechanism:
 
-This reformulation stabilizes optimization and avoids the adversarial instability seen in GANs.
+1. **Forward Process (Fixed)**
+   - Training data is gradually corrupted by adding Gaussian noise.
+   - This creates a Markov chain that moves from structured data → pure noise.
 
-Common backbones:
-- Time-conditioned U-Net
-- Diffusion Transformer (DiT)
+2. **Reverse Process (Learned)**
+   - A neural network learns to predict the noise component at different corruption levels.
+   - Instead of predicting the clean sample directly, it predicts the noise residual.
 
-### Latent Diffusion
+This objective stabilizes training and avoids adversarial instability seen in GANs.
+
+### Common Backbones
+- Time-conditioned U-Net  
+- Diffusion Transformers (DiTs)
+
+---
+
+## 2. Latent Diffusion (Engineering Breakthrough)
 
 Pixel-space diffusion is computationally prohibitive at high resolution.
 
-Modern implementations:
-- Compress images into latent representations using a VAE.
-- Apply diffusion in latent space.
-- Decode back to pixel space after denoising.
+**Latent Diffusion** solves this by:
 
-This reduces memory footprint dramatically and enables deployment on 24GB-class GPUs.
+1. Encoding images into a compressed latent representation via a Variational Autoencoder (VAE).
+2. Running diffusion in latent space.
+3. Decoding back to pixel space after denoising.
 
-### Conditioning
+### Why It Matters
 
-Diffusion models support structured control:
+- Major memory reduction  
+- Enables 24GB-class GPU deployment  
+- Makes high-resolution generation feasible  
+
+When defining system requirements for image/video generation, latent diffusion is often mandatory for feasibility.
+
+---
+
+## 3. Conditioning: Programmable Generation
+
+Diffusion models are **programmable generative systems**.
+
+Control mechanisms include:
 
 - Cross-attention injection (text-to-image)
-- Classifier-free guidance for diversity vs alignment trade-off
-- Structural conditioning (depth maps, segmentation masks, pose skeletons)
-- Inpainting and outpainting
+- Classifier-free guidance (diversity vs alignment tradeoff)
+- Structural conditioning:
+  - Depth maps
+  - Segmentation masks
+  - Pose skeletons
+- Inpainting / Outpainting
 
-This makes diffusion programmable rather than purely generative.
+### Product Implication
 
-### Engineering Constraints
+If the system requires layout control, pose preservation, style consistency, or guided generation, conditioning mechanisms must be specified at architecture design time.
 
-Primary bottleneck: iterative inference.
+---
 
-Generation requires multiple forward passes (20–100+ steps).
+## 4. Engineering Constraints
 
-Implications:
-- Higher latency than autoregressive models
-- GPU-bound inference
-- Resolution-dependent scaling
+Primary bottleneck: **Iterative inference**
 
-Mitigation strategies:
-- Step reduction schedulers
-- Distillation
-- Asynchronous pipelines
-- Pre-generation of assets
+Generation requires:
 
-### When Diffusion Wins
+- 20–100+ denoising steps  
+- Multiple forward passes  
+- GPU-bound inference  
 
-- High-fidelity image or video synthesis
-- Synthetic dataset generation
-- Multi-condition controllable generation
-- Scientific simulation domains (molecules, protein structures)
+### Implications
 
+- Higher latency than autoregressive models  
+- Resolution-dependent cost scaling  
+- Real-time generation is expensive  
+
+### Mitigations
+
+- Step-reduction schedulers  
+- Distillation  
+- Asynchronous pipelines  
+- Asset pre-generation  
 
 
 ---
 
-## Multimodal Systems
+## 5. When Diffusion Wins
 
-Multimodal systems align heterogeneous modalities into a shared semantic representation.
+Diffusion dominates in:
 
-They are primarily alignment engines, not generative systems.
+- High-fidelity image generation  
+- Video synthesis  
+- Synthetic dataset generation  
+- Multi-condition controllable generation  
+- Scientific simulation (molecules, proteins)  
 
-### Contrastive Alignment
+---
 
-The classical approach uses dual encoders:
+# Part II — Multimodal Systems
 
-- Vision encoder → image embeddings
-- Text encoder → text embeddings
+## 1. Conceptual Foundation
 
-Training maximizes similarity between correct pairs and minimizes mismatched pairs.
+Multimodal systems align heterogeneous modalities into a **shared semantic representation**.
 
-This enables:
-- Zero-shot classification
-- Cross-modal retrieval
-- Semantic search
+They function primarily as **alignment engines**, not purely generative systems.
 
-The ceiling of performance is strictly determined by paired data quality.
+Objective:
 
-### Cross-Modal Attention
+- Integrate vision, text, audio, structured data
+- Enable contextual reasoning across modalities
+- Create human-like cross-sensory understanding
 
-Modern multimodal large models extend beyond static alignment.
+---
 
-Mechanism:
-- A vision transformer encodes image patches.
-- The language model attends to visual tokens.
-- Text queries visual representations via attention layers.
+## 2. Contrastive Alignment (Classical Approach)
 
-This enables:
-- Fine-grained spatial grounding
-- Multi-step reasoning
-- Vision-language interaction within a unified transformer stack
+Architecture:
 
-### Fusion Strategies
+- Vision encoder → image embeddings  
+- Text encoder → text embeddings  
 
-Early fusion:
-- Combine raw features.
-- High compute cost.
+Training:
 
-Late fusion:
-- Independent processing.
-- Merge at decision stage.
+- Maximize similarity between correct pairs  
+- Minimize similarity between mismatched pairs  
 
-Mid-level fusion (state-of-the-art):
-- Inject cross-attention in intermediate layers.
-- Best reasoning–compute trade-off.
+### Enables
 
-### Engineering Constraints
+- Zero-shot classification  
+- Cross-modal retrieval  
+- Semantic search  
 
-Primary bottleneck: transformer attention scaling.
+### Core Limitation
 
-As modalities increase:
-- Token count increases.
-- Memory scales quadratically.
-- Inference cost rises.
+Performance is capped by:
 
-Mitigations:
-- Token pruning
-- Sparse attention
-- Low-rank approximations
-- Patch merging
+- Paired dataset quality  
+- Diversity  
+- Scale  
 
-### Alignment Debt
+This is a critical data constraint.
 
-Multimodal systems are data-bound.
+---
 
-If paired datasets are noisy:
-- Grounding errors increase.
-- Hallucinations emerge.
-- Bias compounds.
+## 3. Cross-Modal Attention (Modern Multimodal LLMs)
+
+Modern systems go beyond static alignment.
+
+Architecture pattern:
+
+1. Vision transformer encodes image patches.
+2. Language model attends to visual tokens.
+3. Cross-attention layers enable interaction.
+
+### Capabilities
+
+- Fine-grained spatial grounding  
+- Multi-step reasoning  
+- Unified transformer stack reasoning  
+- Vision-language interaction  
+
+---
+
+## 4. Fusion Strategies
+
+### Early Fusion
+- Combine raw features
+- High compute cost
+
+### Late Fusion
+- Independent processing
+- Merge at decision stage
+- Robust to missing modalities
+
+### Mid-Level Fusion (State-of-the-Art)
+- Inject cross-attention at intermediate layers
+- Best reasoning vs compute tradeoff
+
+Architectural choice directly affects latency, memory, and scalability.
+
+---
+
+## 5. Engineering Constraints
+
+Primary bottleneck: **Transformer attention scaling**
+
+- Token count increases with modalities
+- Memory scales quadratically
+- Inference cost rises rapidly
+
+### Mitigation Techniques
+
+- Token pruning  
+- Sparse attention  
+- Low-rank approximations  
+- Patch merging  
+
+---
+
+## 6. Alignment Debt
+
+Multimodal systems are **data-bound**.
+
+Noisy paired datasets cause:
+
+- Grounding errors  
+- Hallucinations  
+- Bias amplification  
 
 Architecture cannot compensate for poor alignment data.
 
-### When Multimodal Wins
-
-- Visual question answering
-- Cross-modal retrieval
-- Document intelligence (OCR + LLM)
-- Perception-driven user interfaces
-
-
+Data governance must be explicitly defined.
 
 ---
 
-## Architectural Distinction
+## 7. When Multimodal Wins
 
-Diffusion expands the data manifold.
+Multimodal systems excel in:
 
-Multimodal systems align multiple manifolds.
+- Visual question answering  
+- Cross-modal retrieval  
+- Document intelligence (OCR + LLM pipelines)  
+- Perception-driven user interfaces  
 
-They solve orthogonal problems.
+---
 
-In a production AI stack, they often coexist rather than compete.
+# Part III — Architectural Distinction & Coexistence
+
+It is critical to understand the orthogonality:
+
+- **Diffusion models expand the data manifold.**
+- **Multimodal systems align multiple manifolds.**
+
+They solve fundamentally different problems.
+
+In modern production AI stacks, they often coexist:
+
+- Multimodal model → understands and reasons
+- Diffusion model → generates structured outputs
+
+This distinction should guide model strategy decisions in `research/model_strategy.md`.
