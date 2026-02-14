@@ -25,3 +25,29 @@ In these cases, fine-tuning or custom training helps align models to specific ta
   For complex, multi-step decision workflows, orchestrating multiple models or structured agents with retrieval components can improve performance and flexibility. This design supports modular architectures where retrieval, reasoning, and generation are coordinated by workflow layers. 
 
 In practice, choosing between custom training and foundation models, and whether to incorporate RAG or agents involves balancing performance needs, data size, and available compute, as well as risk and compliance requirements.
+
+
+### Strategic Decision Lens
+
+The question is not “Which model is better?”
+It is:
+
+- What hallucination rate is acceptable?
+- What is the cost-per-inference ceiling?
+- Who owns the weights and derived IP?
+- What are the compliance constraints?
+- How frequently will the model require retraining?
+
+Model strategy is fundamentally a constraint-matching problem.
+
+Foundation APIs optimize for:
+- Speed
+- Generalization
+- Reduced R&D cost
+
+Custom or fine-tuned models optimize for:
+- Domain precision
+- IP ownership
+- Behavioral control
+
+The correct decision emerges from aligning model capabilities with operational constraints — not from chasing state-of-the-art benchmarks.
