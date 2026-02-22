@@ -314,3 +314,25 @@ Caching is a powerful tool when applied correctly:
 5. **Don't over-cache**—recognize when caching adds complexity without providing value.
 
 Remember, caching is like that notepad on your desk—incredibly useful when you need quick access to frequently used information, but it requires thoughtful organization and regular maintenance to remain effective. Start simple, measure everything, and iterate based on real-world performance data.
+
+---
+
+## Additional Resources
+
+Want to dive deeper into caching? These resources provide excellent complementary perspectives:
+
+### Interactive Guides & Visualizations
+
+- [**Caching - PlanetScale**](https://planetscale.com/blog/caching) - An interactive, visual tour of caching fundamentals with hands-on examples of temporal locality, spatial locality, and replacement policies.
+
+### Implementation Guides
+
+- [**Introduction to Database Caching - Prisma**](https://www.prisma.io/dataguide/managing-databases/introduction-database-caching) - Comprehensive overview of database caching strategies including cache-aside, read-through, write-through, write-back, and write-around patterns.
+
+### Video Tutorials
+
+- [**Caching Explained (YouTube)**](https://youtu.be/1XJG34mewts?si=MNm_Sawu3ESTAFEy) - Video walkthrough of core caching concepts and implementation strategies.
+
+### Advanced Strategy Deep-Dives
+
+- [**Why Your Caching Strategies Might Be Holding You Back - Redis**](https://redis.io/blog/why-your-caching-strategies-might-be-holding-you-back-and-what-to-consider-next/) - Enterprise-focused analysis of caching strategy trade-offs, monitoring approaches, and when to consider dedicated caching solutions like Redis over built-in options.
