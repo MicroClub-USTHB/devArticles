@@ -1,2 +1,5 @@
 scriptenv
 articles/ai/ai-beyond-llms-research-to-product/scripts/tests/
+articles/ai/ai-beyond-llms-research-to-product/scripts/.scraper_cache
+.scraper_cache
+articles/ai/ai-beyond-llms-research-to-product/scripts/output
