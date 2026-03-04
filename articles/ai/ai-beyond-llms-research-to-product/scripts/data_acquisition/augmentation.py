@@ -643,7 +643,7 @@ def build_audio_pipeline(strength: str = "medium") -> AugmentationPipeline:
             y = add_background_noise(y, noise_factor=random.uniform(0.01, 0.04),
                                      noise_type=random.choice(["white", "pink"]))
             y = time_mask(y, max_mask_fraction=0.15)
-        return y, sr
+        return y
 
     return AugmentationPipeline([lambda x: _pipeline(x, strength)])
 
