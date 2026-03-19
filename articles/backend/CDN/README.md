@@ -231,41 +231,41 @@ Techniques such as **cache versioning** and **conditional requests** help mainta
 
 ## Performance Optimization Techniques
 
-CDNs use a variety of techniques to improve content delivery speed and overall user experience. These include compression of text and media files to reduce payload size, image and video optimization to serve the most efficient formats, and connection reuse through persistent TCP connections to minimize handshake overhead.
+CDNs use a variety of techniques to improve content delivery speed and overall user experience. These include **compression** of text and media files to reduce payload size, **image and video optimization** to serve the most efficient formats, and **connection reuse** through persistent TCP connections to minimize handshake overhead.
 
-Other strategies include prefetching content that users are likely to request next, minifying code such as JavaScript and CSS, and adaptive content delivery that adjusts based on device type or network conditions. By combining these optimizations, CDNs reduce latency, lower bandwidth consumption, and ensure faster, more reliable delivery of both static and dynamic content.
+Other strategies include **prefetching content** that users are likely to request next, **minifying code** such as JavaScript and CSS, and **adaptive content delivery** that adjusts based on device type or network conditions. By combining these optimizations, CDNs reduce latency, lower bandwidth consumption, and ensure faster, more reliable delivery of both static and dynamic content.
 
 ## Transport Protocol Optimization
 
-CDNs improve performance by using advanced transport protocols that reduce latency and increase reliability. Traditional HTTP/1.1 can be inefficient due to multiple sequential requests and connection overhead. Modern CDNs leverage HTTP/2, which multiplexes multiple requests over a single connection, and HTTP/3 (built on QUIC), which reduces handshake times and handles lossy networks more efficiently.
+CDNs improve performance by using advanced transport protocols that reduce latency and increase reliability. Traditional HTTP/1.1 can be inefficient due to multiple sequential requests and connection overhead. Modern CDNs leverage **HTTP/2**, which multiplexes multiple requests over a single connection, and **HTTP/3** (built on QUIC), which reduces handshake times and handles lossy networks more efficiently.
 
-Other optimizations include TCP connection reuse, TLS session resumption, packet loss mitigation. 
+Other optimizations include **TCP connection reuse, TLS session resumption, packet loss mitigation.**
 
 ## Security Capabilities of CDNs
 
-Modern CDNs also act as a security layer between users and the origin infrastructure. They offer TLS termination, managing encryption and decryption at the edge to reduce the processing load on origin servers and ensure secure connections.
+Modern CDNs also act as a security layer between users and the origin infrastructure. They offer **TLS termination**, managing encryption and decryption at the edge to reduce the processing load on origin servers and ensure secure connections.
 
-CDNs often include a Web Application Firewall (WAF) to filter malicious traffic, bot management to block automated abuse, and rate limiting to prevent excessive requests from impacting service availability. 
+CDNs often include a **Web Application Firewall (WAF)** to filter malicious traffic, **bot management** to block automated abuse, and **rate limiting** to prevent excessive requests from impacting service availability. 
 
 These security capabilities protect against common threats such as SQL injection, cross site scripting, and credential stuffing while maintaining fast and reliable content delivery.
 
 ## DDoS Mitigation
 
-CDNs play an important role in protecting websites from Distributed Denial of Service (DDoS) attacks, which attempt to overwhelm servers with massive amounts of traffic. By distributing content across a global network of edge servers, CDNs can absorb and filter attack traffic before it reaches the origin server.
+CDNs play an important role in protecting websites from **Distributed Denial of Service (DDoS) attacks**, which attempt to overwhelm servers with massive amounts of traffic. By distributing content across a global network of edge servers, CDNs can **absorb and filter attack traffic** before it reaches the origin server.
 
 Advanced mitigation strategies include :
 
-- traffic scrubbing, where malicious requests are identified and dropped.
+- **traffic scrubbing**, where malicious requests are identified and dropped.
 
-- rate limiting to control excessive requests.
+- **rate limiting** to control excessive requests.
 
-- automatic rerouting to healthy servers in case of localized attacks.
+- **automatic rerouting** to healthy servers in case of localized attacks.
 
  This allows websites and applications to remain available and performant even during large-scale attacks, providing resilience against one of the most common threats to online services.
 
 ## Edge Computing
 
-Edge computing extends the capabilities of CDNs content delivery by allowing code and applications to run directly on edge servers. This enables processing closer to the user, reducing the need to communicate with the origin server for every request.
+Edge computing extends the capabilities of CDNs content delivery by allowing code and applications to run directly on **edge servers**. This enables processing closer to the user, reducing the need to communicate with the origin server for every request.
 
 ### edge function example : 
 ```
@@ -278,9 +278,9 @@ export default {
 
 ## Observability and Monitoring
 
-Effective CDN management depends on strong observability and monitoring to maintain performance, reliability and security. CDNs provide detailed metrics and logs such as cache hit ratios, request latency, bandwidth usage, and error rates giving operators visibility into how content is delivered across the network.
+Effective CDN management depends on strong **observability and monitoring** to maintain performance, reliability and security. CDNs provide detailed metrics and logs such as cache hit ratios, request latency, bandwidth usage, and error rates giving operators visibility into how content is delivered across the network.
 
-Advanced monitoring systems can track regional performance, detect anomalies, and identify potential bottlenecks or attacks. By analyzing this data in real time, teams can optimize caching strategies, adjust traffic routing, and ensure a consistent, high-quality user experience.
+Advanced monitoring systems can track **regional performance, detect anomalies, and identify potential bottlenecks or attacks.** By analyzing this data in real time, teams can optimize caching strategies, adjust traffic routing, and ensure a consistent, high-quality user experience.
 
 ### an example of CDN logs :
 
@@ -297,13 +297,13 @@ Advanced monitoring systems can track regional performance, detect anomalies, an
 
 CDNs are used across a wide range of industries and applications to improve performance, scalability, and reliability. 
 
-- Websites and web applications use CDNs to deliver pages and static assets quickly to users worldwide. 
+- **Websites and web applications** use CDNs to deliver pages and static assets quickly to users worldwide. 
 
-- Video streaming platforms rely on CDNs to provide smooth playback and reduce buffering by serving content from nearby edge servers.
+- **Video streaming platforms** rely on CDNs to provide smooth playback and reduce buffering by serving content from nearby edge servers.
 
-Other common use cases include software distribution, where large files such as updates or game downloads are delivered efficiently, and gaming infrastructure, which benefits from low-latency content delivery for real-time interactions. 
+Other common use cases include **software distribution**, where large files such as updates or game downloads are delivered efficiently, and **gaming infrastructure**, which benefits from low-latency content delivery for real-time interactions. 
 
-- Acceleration of APIs and dynamic content, ensuring fast responses for mobile apps and cloud services.
+- Acceleration of **APIs and dynamic content**, ensuring fast responses for mobile apps and cloud services.
 
 Overall, any application that requires fast, reliable, and global content delivery can benefit from a CDN.
 
@@ -311,31 +311,31 @@ Overall, any application that requires fast, reliable, and global content delive
 
 Choosing a CDN provider depends on factors such as global reach, security features, performance optimization and integration with existing infrastructure.
 
-- Akamai was one of the first CDN providers and remains a leader with a vast network of edge servers worldwide. 
+- **Akamai** was one of the first CDN providers and remains a leader with a vast network of edge servers worldwide. 
 
-- Cloudflare is known for its security focused services, including DDoS mitigation and Web Application Firewall (WAF) combined with fast content delivery.
+- **Cloudflare** is known for its security focused services, including DDoS mitigation and Web Application Firewall (WAF) combined with fast content delivery.
  
-- Fastly specializes in real-time content delivery and edge computing, offering highly programmable edge services.
+- **Fastly** specializes in real-time content delivery and edge computing, offering highly programmable edge services.
 
-Other notable providers include Amazon CloudFront which integrates seamlessly with AWS services, Microsoft Azure CDN, Google Cloud CDN and smaller specialized networks that focus on video streaming, gaming or regional performance.
+Other notable providers include **Amazon CloudFront** which integrates seamlessly with AWS services, **Microsoft Azure CDN, Google Cloud CDN** and smaller specialized networks that focus on video streaming, gaming or regional performance.
  
 ## Limitations and Trade-offs
 
-While CDNs provide significant performance, scalability, and security benefits, they also involve certain limitations and trade-offs. 
+While CDNs provide significant performance, scalability, and security benefits, they also involve certain **limitations and trade-offs.**
 
-- Cached content may become stale if not properly invalidated, leading to potential inconsistencies for users. Highly dynamic or personalized content can be challenging to deliver efficiently through traditional caching mechanisms. 
+- Cached content may become **stale** if not properly invalidated, leading to potential inconsistencies for users. Highly dynamic or personalized content can be challenging to deliver efficiently through traditional caching mechanisms. 
 
-- Complexity and cost : deploying, configuring and managing a global network requires expertise and investment. (relying on third-party CDN providers may create dependencies that impact flexibility or control over infrastructure). 
+- **Complexity and cost** : deploying, configuring and managing a global network requires expertise and investment. (relying on third-party CDN providers may create dependencies that impact flexibility or control over infrastructure). 
 
 ## The Future of CDNs
 
 The role of CDNs is expanding beyond traditional content delivery, driven by emerging technologies and evolving internet demands. 
 
-- Edge computing will continue to grow enabling more complex processing, personalization and real-time decision-making directly at edge servers. This allows applications to respond faster and reduces the load on origin infrastructure.
+- **Edge computing** will continue to grow enabling more complex processing, personalization and real-time decision-making directly at edge servers. This allows applications to respond faster and reduces the load on origin infrastructure.
 
-CDNs are also adopting AI-powered traffic optimization, predictive caching, and intelligent routing to further improve performance and reliability.
+CDNs are also adopting **AI-powered traffic optimization**, predictive caching, and intelligent routing to further improve performance and reliability.
 
-And much more like serverless edge functions, edge databases, and enhanced security and privacy features will transform CDNs into fully programmable platforms that combine delivery, computation and protection at the network edge. 
+And much more like **serverless edge functions, edge databases**, and enhanced **security and privacy features** will transform CDNs into fully programmable platforms that combine delivery, computation and protection at the network edge. 
 
 ## Conclusion
  
