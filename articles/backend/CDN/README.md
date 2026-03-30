@@ -32,7 +32,7 @@ This combination of physical distance, network congestion, and limited server ca
 
 A **CDN (Content Delivery Network)** is a group of servers spread out over many locations. These servers store duplicate copies of data so that servers can fulfill data requests based on which servers are closest to the respective end-users. Instead of serving every request directly from a single origin server, a CDN replicates and caches content across a globally distributed set of servers, often called **edge servers** or **Points of Presence (PoPs)**.
 
-![what is CDN](images/3.png)
+![what is CDN](images/NEW3.png)
 
 CDNs are used widely for delivering stylesheets and JavaScript files **(static assets)** of libraries like Bootstrap, jQuery etc. Using CDN for those library files is preferable for a number of reasons:
 
@@ -56,11 +56,11 @@ By bringing content closer to users, CDNs reduce the distance data must travel a
 
 Without a CDN, every user request has to travel all the way to the origin server which increases latency and slows page load times for users far from the server.
 
-![without CDN](images/4.png)
+![without CDN](images/NEW4.png)
 
 With a CDN, content is cached at edge servers closer to the user, dramatically reducing delays and delivering pages almost instantly.
 
-![with CDN](images/5.png)
+![with CDN](images/NEW5.png)
 
 ## CDN vs Traditional Hosting
 
@@ -101,7 +101,7 @@ Today, CDNs play a much broader role in internet infrastructure. Beyond accelera
 
 A CDN is built on a distributed architecture designed to bring content closer to users while maintaining a centralized source of truth. At the core of this architecture is the **origin server**, which stores the original version of the website's content. Instead of every user request being served directly from the origin, the CDN distributes content through a network of **edge servers** located in multiple geographic regions.
 
-![CDN architecture](images/6.png)
+![CDN architecture](images/NEW6.png)
 
 These edge servers are organized into **Points of Presence (PoPs)**, which are physical data center locations strategically placed around the world. Each PoP contains multiple caching servers responsible for storing and delivering content to nearby users with minimal latency.
 
@@ -110,7 +110,7 @@ Behind this infrastructure, CDNs typically separate their systems into two logic
 - the **data plane** : handles user requests and content delivery in real time
 - the **control plane** : manages configuration, routing policies, caching rules and network coordination across the entire CDN. 
 
-![How does CDN work?](images/7.png)
+![How does CDN work?](images/NEW7.png)
 
 This architecture allows CDNs to scale globally while maintaining high performance and reliability.
 
