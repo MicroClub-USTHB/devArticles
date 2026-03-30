@@ -360,9 +360,9 @@ In addition, emerging capabilities such as **serverless edge functions, edge dat
 
 ## Conclusion
  
-Content Delivery Networks solved a major problem in modern web, it has become an essential part of modern internet infrastructure, addressing the challenges of latency, scalability, and reliability. By distributing content across globally located edge servers, CDNs reduce the distance between users and data, improve load times, and decrease the burden on origin servers.
+**Content Delivery Networks** have become a fundamental part of modern internet infrastructure, addressing key challenges such as latency, scalability, and reliability. By distributing content across globally located edge servers, CDNs reduce the distance between users and data, improving load times and easing the burden on origin servers.
 
-As web applications continue to grow in complexity and user expectations for speed and reliability rise, CDNs will remain a critical tool for delivering high-performance, secure, and resilient digital experiences worldwide.
+As web applications continue to grow in complexity and user expectations for speed and reliability increase, **CDNs** will remain a critical layer for delivering fast, secure and resilient digital experiences worldwide.
 
 ## Resources :
  
