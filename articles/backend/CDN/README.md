@@ -4,7 +4,7 @@
 
 The internet connects billions of users across the world, all expecting websites and applications to load instantly. However, it became hard to do so after the evolution of the internet and the amount of users increasing more and more. When content is served from a single centralized server, every request must travel across long distances and multiple network hops. As the distance grows, latency and the time required for data to travel across networks increases and the infrastructure struggles to scale efficiently for global demand.
 
-For example, imagine a user in Asia trying to access a web application hosted in Europe. Each request for a page, image or video must cross thousands of kilometers, often resulting in slow load times or buffering. 
+*For example*, imagine a user in **Asia** trying to access a web application hosted in **Europe**. Each request for a page, image or video must cross thousands of kilometers, often resulting in slow load times or buffering. 
 
 Instead of relying on a single origin server to serve every user, CDNs were developed to distribute content across a global network of servers by caching copies of frequently requested data at locations closer to users, which reduces the distance data must travel, latency and improves load times. This distributed architecture allows websites and applications to scale efficiently while maintaining fast and reliable delivery.
 
@@ -317,15 +317,14 @@ Advanced monitoring systems can track **regional performance, detect anomalies, 
 
 CDNs are used across a wide range of industries and applications to improve performance, scalability, and reliability. 
 
-- **Websites and web applications** use CDNs to deliver pages and static assets quickly to users worldwide. 
+ - **Websites and web applications:** Faster loading of pages and static assets to users worldwide. 
+ - **E-commerce:** Improved shopping experience with fast product pages, secure transactions, and better handling of traffic spikes.
+ - **Media & Streaming:** Smooth video, music, and game delivery with reduced buffering.
+ - **Gaming:** Low latency for real-time interactions and faster game updates/downloads.
+ - **APIs & Cloud Services:** Faster API responses and efficient delivery of dynamic content.
+ - **Software Distribution:** Reliable delivery of large files such as updates and installers.
 
-- **Video streaming platforms** rely on CDNs to provide smooth playback and reduce buffering by serving content from nearby edge servers.
-
-Other common use cases include **software distribution**, where large files such as updates or game downloads are delivered efficiently, and **gaming infrastructure**, which benefits from low-latency content delivery for real-time interactions. 
-
-- Acceleration of **APIs and dynamic content**, ensuring fast responses for mobile apps and cloud services.
-
-Overall, any application that requires fast, reliable, and global content delivery can benefit from a CDN.
+*Overall, any application that requires fast, reliable, and global content delivery can benefit from a CDN.* 
 
 ## Major CDN providers
 
