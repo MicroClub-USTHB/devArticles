@@ -261,11 +261,13 @@ Other optimizations include **TCP connection reuse, TLS session resumption, pack
 
 ## Security Capabilities of CDNs
 
-Modern CDNs also act as a security layer between users and the origin infrastructure. They offer **TLS termination**, managing encryption and decryption at the edge to reduce the processing load on origin servers and ensure secure connections.
+Modern CDNs act as a security layer between users and origin servers, helping protect infrastructure while maintaining performance. They provide **TLS termination**, handling encryption and decryption at the edge to reduce load on the origin and ensure secure connections.
 
-CDNs often include a **Web Application Firewall (WAF)** to filter malicious traffic, **bot management** to block automated abuse, and **rate limiting** to prevent excessive requests from impacting service availability. 
+CDNs also include **Web Application Firewalls (WAFs)** to filter malicious traffic, **bot management** to block automated abuse and **rate limiting** to prevent excessive requests from affecting availability. **Malicious requests** are inspected at the edge using **filtering rules**, **threat signatures**, and **behavioral analysis**. 
 
-These security capabilities protect against common threats such as SQL injection, cross site scripting, and credential stuffing while maintaining fast and reliable content delivery.
+For **HTTP traffic**, CDNs often enforce HTTPS by redirecting users to secure connections, while still monitoring and filtering non-secure requests to maintain safe content delivery.
+
+These security measures protect against common threats such as SQL injection, cross-site scripting, and credential stuffing, all while ensuring fast and reliable content delivery.
 
 ### DDoS Mitigation
 
