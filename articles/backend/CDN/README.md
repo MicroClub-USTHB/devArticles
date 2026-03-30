@@ -62,6 +62,21 @@ With a CDN, content is cached at edge servers closer to the user, dramatically r
 
 ![with CDN](images/5.png)
 
+## CDN vs Traditional Hosting
+
+It is important to understand how CDNs differ from traditional hosting models when designing scalable and high-performance systems.
+
+| Feature                | Traditional Hosting                        | CDN                                       |
+| ---------------------- | ------------------------------------------ | ----------------------------------------- |
+| Architecture           | Centralized (single server or data center) | Distributed across global edge servers    |
+| Content Delivery       | All requests go to the origin server       | Content served from nearest edge location |
+| Latency                | High for distant users                     | Low due to geographic proximity           |
+| Scalability            | Limited, prone to bottlenecks              | Highly scalable, load distributed         |
+| Reliability            | Single point of failure                    | Redundant, multiple edge locations        |
+| Performance Under Load | Degrades during traffic spikes             | Handles spikes efficiently                |
+| Availability           | Downtime affects all users                 | Failover across multiple locations        |
+| Security               | Basic                                      | Advanced (WAF, DDoS protection)           |
+
 ## Evolution of CDNs
 
 In the late 1990s, companies like Akamai introduced Content Delivery Networks as internet traffic began to grow rapidly and traditional web infrastructure struggled to deliver content efficiently to users around the world.
