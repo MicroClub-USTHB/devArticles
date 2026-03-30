@@ -253,7 +253,7 @@ CDNs use a variety of techniques to improve content delivery speed and overall u
 
 Other strategies include **prefetching content** that users are likely to request next, **minifying code** such as JavaScript and CSS, and **adaptive content delivery** that adjusts based on device type or network conditions. By combining these optimizations, CDNs reduce latency, lower bandwidth consumption, and ensure faster, more reliable delivery of both static and dynamic content.
 
-## Transport Protocol Optimization
+### Transport Protocol Optimization
 
 CDNs improve performance by using advanced transport protocols that reduce latency and increase reliability. Traditional HTTP/1.1 can be inefficient due to multiple sequential requests and connection overhead. Modern CDNs leverage **HTTP/2**, which multiplexes multiple requests over a single connection, and **HTTP/3** (built on QUIC), which reduces handshake times and handles lossy networks more efficiently.
 
@@ -267,7 +267,7 @@ CDNs often include a **Web Application Firewall (WAF)** to filter malicious traf
 
 These security capabilities protect against common threats such as SQL injection, cross site scripting, and credential stuffing while maintaining fast and reliable content delivery.
 
-## DDoS Mitigation
+### DDoS Mitigation
 
 CDNs play an important role in protecting websites from **Distributed Denial of Service (DDoS) attacks**, which attempt to overwhelm servers with massive amounts of traffic. By distributing content across a global network of edge servers, CDNs can **absorb and filter attack traffic** before it reaches the origin server.
 
