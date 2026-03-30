@@ -340,11 +340,13 @@ Other notable providers include **Amazon CloudFront** which integrates seamlessl
  
 ## Limitations and Trade-offs
 
-While CDNs provide significant performance, scalability, and security benefits, they also involve certain **limitations and trade-offs.**
+While CDNs provide significant performance, scalability, and security benefits, they also involve certain **limitations and trade-offs :**
 
-- Cached content may become **stale** if not properly invalidated, leading to potential inconsistencies for users. Highly dynamic or personalized content can be challenging to deliver efficiently through traditional caching mechanisms. 
-
-- **Complexity and cost** : deploying, configuring and managing a global network requires expertise and investment. (relying on third-party CDN providers may create dependencies that impact flexibility or control over infrastructure). 
+ - **Cache Staleness:** Cached content may become outdated if not properly invalidated, leading to inconsistencies for users.
+ - **Dynamic Content Challenges:** Highly dynamic or personalized content is harder to cache efficiently.
+ - **Complexity:** Deploying and configuring CDN infrastructure requires technical expertise.
+ - **Cost:** Operating at global scale can introduce additional costs, especially for high traffic volumes.
+ - **Third-party Dependency:** Relying on external CDN providers may reduce control over infrastructure and limit flexibility.
 
 ## The Future of CDNs
 
