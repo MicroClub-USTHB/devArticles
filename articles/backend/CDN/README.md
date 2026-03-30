@@ -2,7 +2,10 @@
 
 ## Introduction 
 
-The internet connects billions of users across the world, all expecting websites and applications to load instantly. However, it became hard to do so after the evolution of the internet and the amount of users increasing more and more. When content is served from a single centralized server, every request must travel across long distances and multiple network hops. As the distance grows, latency and the time required for data to travel across networks increases and the infrastructure struggles to scale efficiently for global demand. 
+The internet connects billions of users across the world, all expecting websites and applications to load instantly. However, it became hard to do so after the evolution of the internet and the amount of users increasing more and more. When content is served from a single centralized server, every request must travel across long distances and multiple network hops. As the distance grows, latency and the time required for data to travel across networks increases and the infrastructure struggles to scale efficiently for global demand.
+
+For example, imagine a user in Asia trying to access a web application hosted in Europe. Each request for a page, image or video must cross thousands of kilometers, often resulting in slow load times or buffering. 
+
 Instead of relying on a single origin server to serve every user, CDNs were developed to distribute content across a global network of servers by caching copies of frequently requested data at locations closer to users, which reduces the distance data must travel, latency and improves load times. This distributed architecture allows websites and applications to scale efficiently while maintaining fast and reliable delivery.
 
 ## The Problem: Distance, Latency and Scalability
